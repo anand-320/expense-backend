@@ -1,16 +1,22 @@
+#name: learn-github-actions
+#on: [push]
+#jobs:
+#  CI_Steps:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: code checkout
+#        uses: actions/checkout@v4
+#      - run: echo ok
+#        name: echo Build
+#      - run: echo ok
+#        name: echo test
+#      - run: echo ok
+#        name: echo review
+#      - run: echo ok
+#        name: release software
+
 name: learn-github-actions
 on: [push]
 jobs:
-  CI_Steps:
-    runs-on: ubuntu-latest
-    steps:
-      - name: code checkout
-        uses: actions/checkout@v4
-      - run: echo ok
-        name: echo Build
-      - run: echo ok
-        name: echo test
-      - run: echo ok
-        name: echo review
-      - run: echo ok
-        name: release software
+  call-continuous-integration-reusable:
+    uses: anand-320/github-reusable-workflows/.github/workflows/ci.yml@main
