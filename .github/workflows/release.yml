@@ -1,0 +1,11 @@
+name: release
+on:
+  push:
+    tags:
+      - "*"
+  call-release-reusable:
+    uses: anand-320/github-reusable-workflows/.github/workflows/release.yml@main
+    with:
+      project_name: expense-backend
+      npm_install: false
+    secrets: inherit
