@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - 'EXP-**'
+
+  jobs:
   call-continuous-integration-reusable:
     uses: anand-320/github-reusable-workflows/.github/workflows/ci.yml@main
     with:
