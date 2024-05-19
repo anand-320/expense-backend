@@ -4,7 +4,7 @@ on:
     tags:
       - "*"
 
-  jobs:
+jobs:
   call-release-reusable:
     uses: anand-320/github-reusable-workflows/.github/workflows/release.yml@main
     with:
