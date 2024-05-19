@@ -1,6 +1,9 @@
-name: learn-github-actions
-on: [push]
-jobs:
+name: continuous integration
+on:
+  push:
+    branches:
+      - main
+      - 'EXP-**'
   call-continuous-integration-reusable:
     uses: anand-320/github-reusable-workflows/.github/workflows/ci.yml@main
     with:
