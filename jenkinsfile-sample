@@ -1,0 +1,18 @@
+pipeline {
+    agent {
+      node {
+        label 'ci-server'
+      }
+    }
+
+    environment {
+      MYURL="jenkins.com"
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
