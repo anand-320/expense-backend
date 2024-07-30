@@ -1,42 +1,18 @@
 pipeline {
-  agent {
-    node {
-      label 'ci-server'
-    }
-  }
-
-  stages{
-
-    stage('lint code'){
-      steps {
-        sh 'env'
-        echo 'lint code'
+    agent {
+      node {
+        label 'ci-server'
       }
     }
 
-    stage('Run unit test'){
-      steps {
-        echo 'Run unit test'
-      }
+    environment {
+      MYURL="jenkins.com"
     }
-
-    stage('Run integration test'){
-      steps {
-        echo 'Run integration test'
-      }
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
-
-    stage('Sonar scan code review'){
-      steps {
-        echo 'Sonar scan'
-      }
-    }
-
-    stage('Release software'){
-      steps {
-        echo 'Release software'
-      }
-    }
-
-  }
 }
